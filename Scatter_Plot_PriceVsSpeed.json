@@ -9,17 +9,17 @@
   "params": [
     {
       "name": "Price",
-      "value": 50,
+      "value": 0,
       "bind": {
         "input": "range",
         "min": 0,
         "max": 50,
         "step": 1,
-        "name": "Price below: "
+        "name": "Price above: "
       }
     }
   ],
-  "transform": [{"filter": "datum['Average price of 1GB (USD)'] <= Price"}],
+  "transform": [{"filter": "datum['Average price of 1GB (USD)'] >= Price"}],
   "layer": [
     {
       "mark": "point",
@@ -27,17 +27,27 @@
         "x": {
           "field": "Avg speed",
           "type": "quantitative",
-          "scale": {"domain": [0, 150]}
+          "scale": {"domain": [0, 150]},
+          "axis": {"title": "Average Speed (Mbps)"}
         },
         "y": {
           "field": "Average price of 1GB (USD)",
           "type": "quantitative",
-          "scale": {"domain": [0, 50]}
+          "scale": {"domain": [0, 50]},
+          "axis": {"title": "Price of 1GB (USD)"}
         },
         "tooltip": [
-          {"field": "Country", "type": "nominal"},
-          {"field": "Avg speed", "type": "quantitative"},
-          {"field": "Average price of 1GB (USD)", "type": "quantitative"}
+          {"field": "Country", "type": "nominal", "title": "Country: "},
+          {
+            "field": "Avg speed",
+            "type": "quantitative",
+            "title": "Avg Speed (Mbps): "
+          },
+          {
+            "field": "Average price of 1GB (USD)",
+            "type": "quantitative",
+            "title": "Avg Price (USD): "
+          }
         ],
         "color": {"field": "Continental region", "type": "nominal"},
         "opacity": {
