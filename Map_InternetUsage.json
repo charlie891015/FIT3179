@@ -1,7 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Internet Usage by Country",
-  "width": 800,
+  "width": 940,
   "height": 400,
   "projection": {"type": "equalEarth"},
   "data": {
@@ -29,7 +28,7 @@
       "mark": {"type": "rect", "color": "lightblue"},
       "encoding": {
         "x": {"value": 0},
-        "x2": {"value": 800},
+        "x2": {"value":940},
         "y": {"value": 0},
         "y2": {"value": 400}
       }
@@ -40,8 +39,18 @@
         "color": {
           "field": "internet_usage_percentage",
           "type": "quantitative",
-          "scale": {"type": "linear", "scheme": "viridis"},
-          "title": "Internet Usage"
+          "scale": {
+            "type": "linear",
+            "scheme": "viridis",
+            "domain": [0, 0.2, 0.4, 0.6, 0.8, 1],
+            "nice": false
+          },
+          "title": "Percentage of Usage",
+          "legend": {"format": "%"}
+        },
+        "opacity": {
+          "condition": {"selection": "country_select", "value": 1},
+          "value": 0.6
         },
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
@@ -52,7 +61,8 @@
             "format": ".2%"
           }
         ]
-      }
+      },
+      "selection": {"country_select": {"type": "single", "on": "mouseover"}}
     }
   ],
   "config": {}

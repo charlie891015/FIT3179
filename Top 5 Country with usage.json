@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 550,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/charlie891015/FIT3179/main/gapminder_internet.csv"
+  },
+  "transform": [
+    {"filter": {"field": "internetuserate", "valid": true}},
+    {
+      "window": [{"op": "rank", "as": "rank"}],
+      "sort": [{"field": "internetuserate", "order": "descending"}]
+    },
+    {"filter": {"field": "rank", "lte": 5}},
+    {
+      "calculate": "datum.internetuserate / 100",
+      "as": "internet_usage_percentage"
+    }
+  ],
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {"field": "country", "type": "nominal", "sort": {"field": "rank"}},
+        "x": {
+          "field": "incomeperperson",
+          "type": "quantitative",
+          "title": "Income Per Person"
+        },
+        "tooltip": [
+          {"field": "country", "title": "Country"},
+          {
+            "field": "internet_usage_percentage",
+            "title": "Internet Usage Rate",
+            "format": ".2%"
+          },
+          {"field": "incomeperperson", "title": "Income Per Person"}
+        ]
+      }
+    }
+  ],
+  "config": {}
+}

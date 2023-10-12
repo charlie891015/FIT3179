@@ -1,0 +1,18 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/charlie891015/FIT3179/main/Top-Types.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "y": {"field": "Type", "type": "ordinal", "title": "Type", "sort": "-x"},
+    "x": {"field": "Percentage", "type": "quantitative", "title": "Percentage"},
+    "tooltip": [
+      {"field": "Type", "title": "Type"},
+      {"field": "Percentage", "title": "Percentage"}
+    ]
+  },
+  "width": 500,
+  "height": 600,
+  "config": {}
+}

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 880,
+  "height": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/charlie891015/FIT3179/main/number-of-internet-users-by-country.csv"
+  },
+  "params": [
+    {
+      "name": "CountrySelection",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Show All",
+          "Australia",
+          "China",
+          "United States",
+          "Japan",
+          "Russia",
+          "United Kingdom",
+          "India"
+        ],
+        "labels": [
+          "Show All",
+          "Australia",
+          "China",
+          "United States",
+          "Japan",
+          "Russia",
+          "United Kingdom",
+          "India"
+        ],
+        "name": "Country Selection: "
+      },
+      "value": "Show All"
+    }
+  ],
+  "transform": [
+    {
+      "filter": {
+        "field": "Country",
+        "oneOf": [
+          "Australia",
+          "China",
+          "United States",
+          "Japan",
+          "Russia",
+          "United Kingdom",
+          "India"
+        ]
+      },
+      "as": "Country_filter"
+    },
+    {
+      "filter": "CountrySelection === 'Show All' || datum.Country === CountrySelection"
+    }
+  ],
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "Year", "type": "temporal", "title": "Year"},
+    "y": {
+      "field": "NumberOfUser",
+      "type": "quantitative",
+      "title": "Number of Internet Users"
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "title": "Country",
+      "scale": {
+        "range": [
+          "#1f77b4",
+          "#ff7f0e",
+          "#2ca02c",
+          "#d62728",
+          "#9467bd",
+          "#8c564b",
+          "#e377c2"
+        ]
+      }
+    },
+    "tooltip": [
+      {"field": "Year", "type": "temporal", "title": "Year"},
+      {
+        "field": "NumberOfUser",
+        "type": "quantitative",
+        "title": "Number of Internet Users"
+      },
+      {"field": "Country", "title": "Country"}
+    ]
+  },
+  "config": {}
+}

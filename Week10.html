@@ -5,14 +5,105 @@
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-</head>
 
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+  integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .pure-g {
+      margin: 20px auto;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style the charts */
+    .vega-embed {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 10px 0;
+      background-color: #fff;
+    }
+
+    h2 {
+      color: #333;
+      font-weight: bold;
+    }
+    p {
+      font-size: 18px;
+    }
+
+    .chart-container {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  </style>
+</head>
   
 <body>
-  <div id="chart1"></div>
-  <p>Description for Chart 1: This is a map showing internet usage in each country.</p>
-  <div id="chart2"></div>
-  <p>Description for Chart 2: This is a scatter plot showing price vs. speed in each country.</p>
+
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <h1>Internet Usage</h1>
+    </div>
+  </div>
+
+  <div class="pure-g">
+    <div class="pure-u-2-5">
+      <div class="description description-left">
+        <h2>Internet Usage By Country In 2020</h2>
+        <p>The "Internet Usage By Country In 2020" map delves into global digital connectivity trends from the year 2020. It visually illustrates internet penetration variations among nations, shedding light on the digital divide's impact on societies and economies. Explore this map to grasp the diverse digital journeys of countries worldwide.</p>
+      </div>
+    </div>
+    <div class="pure-u-3-5">
+      <div id="chart1" class="vega-embed chart-container"></div>
+    </div>
+  </div>
+  
+  <div class="pure-g">
+    <div class="pure-u-2-5">
+      <h2>Top 5 Countries with Internet Usage and Their Income</h2>
+      <p>This bar chart explores the correlation between internet usage and income per person in the top 5 countries. It provides a concise visual representation of how these nations balance internet adoption and individual prosperity. Discover the intriguing interplay between technology and economic well-being within this chart.</p>
+      <div id="chart2" class="vega-embed chart-container"></div>
+    </div>
+    <div class="pure-u-3-5">
+      <h2>Number of Internet Users Over Time</h2>
+      <p>This dynamic line chart tracks the growth in the number of internet users over time in various countries. It offers a compelling visual narrative of the remarkable expansion of internet adoption. Explore the chart to witness the evolving digital landscape and the surge in online connectivity worldwide.</p>
+      <div id="chart3" class="vega-embed chart-container"></div>
+    </div>
+  </div>
+  
+  <div class="pure-g">
+    <div class="pure-u-2-5">
+      <h2>Percentage Of Use By Internet</h2>
+      <p>This engaging bar chart provides insight into the multifaceted usage of the internet. It illustrates the percentage breakdown of internet use across various categories or purposes. Explore the chart to understand how the internet serves as a versatile tool for communication, information, entertainment, and more.</p>
+      <div id="chart5" class="vega-embed chart-container"></div>
+    </div>
+    <div class="pure-u-3-5">
+      <h2>Internet Speed vs Price in 2020</h2>
+      <p>This scatter plot unveils the intriguing relationship between internet speed and pricing in multiple countries during the year 2020. It offers a visual snapshot of how different nations balance the cost of internet services with the quality of their connections. Explore the chart to uncover disparities in pricing and speed across the globe.</p>
+      <div id="chart4" class="vega-embed chart-container"></div>
+    </div>
+  </div>
 </body>
 
 <script>
@@ -21,7 +112,16 @@
     .catch(console.error);
 
   // Load and render the second chart
-  vegaEmbed('#chart2', 'Scatter_Plot_PriceVsSpeed.json', { actions: false })
+  vegaEmbed('#chart4', 'Scatter_Plot_PriceVsSpeed.json', { actions: false })
+    .catch(console.error);
+
+  vegaEmbed('#chart3', 'Number of Internet Users Over Time.json', { actions: false })
+    .catch(console.error);
+
+  vegaEmbed('#chart2', 'Top 5 Country with usage.json', { actions: false })
+    .catch(console.error);
+
+  vegaEmbed('#chart5', 'Percentage Of Use By Internet.json', { actions: false })
     .catch(console.error);
 </script>
 
