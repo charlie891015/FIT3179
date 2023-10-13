@@ -16,10 +16,6 @@
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
     }
-    .container {
-      max-width: 80%;
-      margin: 0 auto;
-    }
     h1 {
       text-align: center;
       color: #333;
@@ -69,23 +65,25 @@
       <h1>Internet Usage</h1>
     </div>
   </div>
-
+ 
   <div class="pure-g">
     <div class="pure-u-2-5">
-      <div class="description description-left">
-        <h2>Internet Usage By Country In 2020</h2>
-        <p>The "Internet Usage By Country In 2020" map delves into global digital connectivity trends from the year 2020. It visually illustrates internet penetration variations among nations, shedding light on the digital divide's impact on societies and economies. Explore this map to grasp the diverse digital journeys of countries worldwide.</p>
-      </div>
+      <h2>Device Usage Distribution</h2>
+      <p>
+        This pie chart illustrates the distribution of device usage for internet access. It provides a visual representation of the percentage of various devices, such as smartphones, laptops, tablets, and more, used to connect to the internet.</p>
+      <div id="chart6" class="vega-embed chart-container"></div>
     </div>
     <div class="pure-u-3-5">
+      <h2>Internet Usage By Country In 2020</h2>
+        <p>The "Internet Usage By Country In 2020" map delves into global digital connectivity trends from the year 2020. It visually illustrates internet penetration variations among nations, shedding light on the digital divide's impact on societies and economies. Explore this map to grasp the diverse digital journeys of countries worldwide.</p>
       <div id="chart1" class="vega-embed chart-container"></div>
     </div>
-  </div>
+
   
-  <div class="pure-g">
+
     <div class="pure-u-2-5">
-      <h2>Top 5 Countries with Internet Usage and Their Income</h2>
-      <p>This bar chart explores the correlation between internet usage and income per person in the top 5 countries. It provides a concise visual representation of how these nations balance internet adoption and individual prosperity. Discover the intriguing interplay between technology and economic well-being within this chart.</p>
+      <h2>Percentage Of Use By Internet</h2>
+      <p>This engaging bar chart provides insight into the multifaceted usage of the internet. It illustrates the percentage breakdown of internet use across various categories or purposes.</p>
       <div id="chart2" class="vega-embed chart-container"></div>
     </div>
     <div class="pure-u-3-5">
@@ -93,12 +91,10 @@
       <p>This dynamic line chart tracks the growth in the number of internet users over time in various countries. It offers a compelling visual narrative of the remarkable expansion of internet adoption. Explore the chart to witness the evolving digital landscape and the surge in online connectivity worldwide.</p>
       <div id="chart3" class="vega-embed chart-container"></div>
     </div>
-  </div>
-  
-  <div class="pure-g">
+
     <div class="pure-u-2-5">
-      <h2>Percentage Of Use By Internet</h2>
-      <p>This engaging bar chart provides insight into the multifaceted usage of the internet. It illustrates the percentage breakdown of internet use across various categories or purposes. Explore the chart to understand how the internet serves as a versatile tool for communication, information, entertainment, and more.</p>
+      <h2>Top 5 with Internet Usage and Their Income</h2>
+      <p>This bar chart explores the correlation between internet usage and income per person in the top 5 countries. Discover the intriguing relationship between technology and economic well-being within this chart.</p>
       <div id="chart5" class="vega-embed chart-container"></div>
     </div>
     <div class="pure-u-3-5">
@@ -110,21 +106,22 @@
 </body>
 
 <script>
-  // Load and render the first chart
   vegaEmbed('#chart1', 'Map_InternetUsage.json', { actions: false })
     .catch(console.error);
 
-  // Load and render the second chart
   vegaEmbed('#chart4', 'Scatter_Plot_PriceVsSpeed.json', { actions: false })
     .catch(console.error);
 
   vegaEmbed('#chart3', 'Number of Internet Users Over Time.json', { actions: false })
     .catch(console.error);
 
-  vegaEmbed('#chart2', 'Top 5 Country with usage.json', { actions: false })
+  vegaEmbed('#chart5', 'Top 5 Country with usage.json', { actions: false })
     .catch(console.error);
 
-  vegaEmbed('#chart5', 'Percentage Of Use By Internet.json', { actions: false })
+  vegaEmbed('#chart2', 'Percentage Of Use By Internet.json', { actions: false })
+    .catch(console.error);
+
+  vegaEmbed('#chart6', 'Device Usage Distribution.json', { actions: false })
     .catch(console.error);
 </script>
 

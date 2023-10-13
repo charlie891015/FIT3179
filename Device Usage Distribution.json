@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/charlie891015/FIT3179/main/Device-Used.csv"
+  },
+  "mark": {"type": "arc", "tooltip": true},
+  "transform": [
+    {"calculate": "datum.Percentage + '%'", "as": "PercentageWithSymbol"}
+  ],
+  "encoding": {
+    "theta": {"field": "Percentage", "type": "quantitative"},
+    "color": {
+      "field": "Device",
+      "type": "nominal",
+      "scale": {"scheme": "tableau20"}
+    },
+    "shape": {
+      "field": "Device",
+      "type": "nominal",
+      "scale": {
+        "range": [
+          "circle",
+          "square",
+          "cross",
+          "diamond",
+          "triangle-up",
+          "triangle-down"
+        ]
+      }
+    },
+    "tooltip": [
+      {"field": "Device", "title": "Device"},
+      {"field": "PercentageWithSymbol", "title": "Percentage"}
+    ],
+    "order": {"aggregate": "sum", "field": "Percentage"}
+  },
+  "config": {}
+}
