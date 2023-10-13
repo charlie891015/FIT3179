@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+  integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .section {
+      margin: 20px auto;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style the charts */
+    .vega-embed {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 10px 0;
+      background-color: #fff;
+    }
+
+    h1{
+        font-size: 35px;
+        font-weight: bold;
+    }
+    h2 {
+      color: #333;
+      font-weight: bold;
+      font-size: 25px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .chart-container {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  </style>
+</head>
+  
+<body>
+<div class="section">
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <h1>Internet</h1>
+      <p style="text-align: center;">audakhjbcahjkcbauidbacbsauibcauisbcauoiscbauoscbaou</p>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+        <h2>Analyze internet percentage by country in 2020</h2>
+            <div id="chart1" class="vega-embed chart-container"></div>
+                <div class="pure-g">
+                    <div class="pure-u-1-2">
+                        <p>In the above Visualization, this map shows internet usage in 2020, offers a display of internet penetration,
+                            with colors ranging from the <span style="color: rgb(34, 0, 186);"> dark blue, representing 0% internet usage</span>, to
+                            the most vibrant, <span style="color: rgb(149, 218, 46);">brilliant greens denoting 100% usage</span>.
+                            As you delve into this map, you'll discover an array of greens that not only represent internet adoption rates but also tell a compelling narrative of technological advancement, disparities, and the role of the internet in shaping societies.</p>
+                        <br>
+                        <br>
+                        <p>The bar chart on the right explores the correlation between internet usage and per capita income for the
+                             top 5 countries. Discover the interesting relationship between technology and economic well-being in
+                              this chart. We can find that these countries are all developed countries. By showing these leading
+                               countries, we aim to reveal the powerful link between digital connectivity and socio-economic
+                                development.</p>
+                    </div>
+                    <div class="pure-u-1-2">
+                        <div id="chart5" class="vega-embed chart-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Internet Usage</h2>
+    <br>
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <div id="chart6" class="vega-embed chart-container"></div>
+        </div>
+        <div class="pure-u-1-2">
+            <p>This pie chart illustrates the distribution of network access device usage. 
+                It visually shows the percentage of various devices used to connect to the Internet.
+                 We can find that <span style="color: rgba(255,191,121,255);">mobile phones</span> are the most popular,
+                followed by <span style="color: rgba(245,133,24,255);">laptops</span>. 
+                 This can reflect that the more convenient the device, the higher the usage rate.</p>
+        </div>
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+           <p>This fascinating bar graph provides insight into the many facets of use of the web. It illustrates
+             the percentage breakdown of web usage by category or purpose. We can find that social networking
+              accounts for the majority here (<span style="font-weight: bold;">Chat and Social Network</span>), followed by <span style="font-weight: bold;">Search</span> and <span style="font-weight: bold;">Shopping</span>, which
+               are often used by the vast majority of people.</p>
+        </div>
+        <div class="pure-u-1-2">
+            <div id="chart2" class="vega-embed chart-container"></div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Development of the Internet</h2>
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <div id="chart3" class="vega-embed chart-container"></div>
+        </div>
+        <div class="pure-u-1-2">
+            <p>The "Internet Usage by Country 2020" map provides an in-depth look at global digital
+                 connectivity trends since 2020. It intuitively illustrates the differences
+                  in Internet penetration rates across countries and reveals the impact of
+                   the digital gap on society and the economy. We can find that both <span style="color: rgba(255,158,72,255);">China</span>
+                    and <span style="color: rgba(53,164,53,255);">India</span> are developing rapidly, which also reflects the importance that
+                     developing countries attach to the Internet.</p>
+        </div>
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+           <p>This scatter plot unveils the intriguing relationship between internet
+             speed and pricing in multiple countries during the year 2020. It offers a
+              visual snapshot of how different nations balance the cost of internet services
+               with the quality of their connections. Looking at the chart to uncover disparities
+                in pricing and speed across the globe and clicking at the legend to highlight all country in this region.</p>
+        </div>
+        <div class="pure-u-1-2">
+            <div id="chart4" class="vega-embed chart-container"></div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+  vegaEmbed('#chart1', 'Map_InternetUsage.json', { actions: false })
+    .catch(console.error);
+
+  vegaEmbed('#chart4', 'Scatter_Plot_PriceVsSpeed.json', { actions: false })
+    .catch(console.error);
+
+  vegaEmbed('#chart3', 'Number of Internet Users Over Time.json', { actions: false })
+    .catch(console.error);
+
+  vegaEmbed('#chart5', 'Top 5 Country with usage.json', { actions: false })
+    .catch(console.error);
+
+  vegaEmbed('#chart2', 'Percentage Of Use By Internet.json', { actions: false })
+    .catch(console.error);
+
+  vegaEmbed('#chart6', 'Device Usage Distribution.json', { actions: false })
+    .catch(console.error);
+</script>
+
+</html>

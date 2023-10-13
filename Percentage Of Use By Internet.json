@@ -15,7 +15,8 @@
       {"field": "PercentageWithSymbol", "title": "Percentage"}
     ]
   },
-  "width": 400,
-  "height": 370,
+  "width": 560,
+  "height": 250,
+  "title":"Percentage Of Use By Internet",
   "config": {}
 }

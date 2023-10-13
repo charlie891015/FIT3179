@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 600,
-  "height": 400,
+  "width": 540,
+  "height": 200,
   "data": {
     "url": "https://raw.githubusercontent.com/charlie891015/FIT3179/main/Device-Used.csv"
   },
@@ -16,25 +16,12 @@
       "type": "nominal",
       "scale": {"scheme": "tableau20"}
     },
-    "shape": {
-      "field": "Device",
-      "type": "nominal",
-      "scale": {
-        "range": [
-          "circle",
-          "square",
-          "cross",
-          "diamond",
-          "triangle-up",
-          "triangle-down"
-        ]
-      }
-    },
     "tooltip": [
       {"field": "Device", "title": "Device"},
       {"field": "PercentageWithSymbol", "title": "Percentage"}
     ],
     "order": {"aggregate": "sum", "field": "Percentage"}
   },
+  "title":"Device Usage Distribution",
   "config": {}
 }
