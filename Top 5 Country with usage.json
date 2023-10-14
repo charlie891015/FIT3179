@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 600,
-  "height": 300,
+  "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/charlie891015/FIT3179/main/gapminder_internet.csv"
   },
@@ -25,7 +25,7 @@
         "x": {
           "field": "incomeperperson",
           "type": "quantitative",
-          "title": "Income Per Person"
+          "title": "Income Per Person ($)"
         },
         "tooltip": [
           {"field": "country", "title": "Country"},
@@ -34,7 +34,7 @@
             "title": "Internet Usage Rate",
             "format": ".2%"
           },
-          {"field": "incomeperperson", "title": "Income Per Person"}
+          {"field": "incomeperperson", "title": "Income Per Person ($)"}
         ]
       }
     }

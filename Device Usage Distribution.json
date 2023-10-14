@@ -9,12 +9,25 @@
   "transform": [
     {"calculate": "datum.Percentage + '%'", "as": "PercentageWithSymbol"}
   ],
-  "encoding": {
+"encoding": {
     "theta": {"field": "Percentage", "type": "quantitative"},
     "color": {
       "field": "Device",
       "type": "nominal",
-      "scale": {"scheme": "tableau20"}
+      "scale": {
+        "range": [
+          "#1f77b4",
+          "#ff7f0e",
+          "#2ca02c",
+          "#d62728",
+          "#9467bd",
+          "#8c564b",
+          "#e377c2",
+          "#7f7f7f",
+          "#bcbd22",
+          "#17becf"
+        ]
+      }
     },
     "tooltip": [
       {"field": "Device", "title": "Device"},
